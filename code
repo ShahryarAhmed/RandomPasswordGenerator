@@ -6,6 +6,7 @@ import pyperclip
 
 
 def generate_password():
+	copyBtn.config(text = "Copy Password")
 	password = ' '
 
 	for n in range(5):
@@ -20,7 +21,6 @@ def copy_password():
 	pyperclip.copy(lbl['text'])
 
 
-
 root = Tk()
 root.title("Password Generator")
 root.geometry("250x200")
@@ -28,6 +28,6 @@ GPbtn = Button(root, text= "Generate Password", command= generate_password)
 GPbtn.place(relx= 0.5, rely= 0.0 , anchor= N )
 lbl = Label(root,font=("times",15,"bold"), height =  1, width = 20 ,borderwidth=2, relief ="solid")
 lbl.place(relx = 0.5, rely = 0.23, anchor= N)
-copyBtn = Button(root, text="Copy Password", command = copy_password)
+copyBtn = Button(root, text="Copy Password", height = 1, width = 15, command = copy_password)
 copyBtn.place(relx=0.5,rely=0.5, anchor = CENTER)
 root.mainloop()
